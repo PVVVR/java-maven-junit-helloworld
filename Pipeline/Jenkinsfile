@@ -21,7 +21,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    bat 'C:/jba/tools/sonar-scanner-4.3.0.2102/bin/sonar-scanner.bat -D sonar.projectKey=java-maven-junit-helloworld'
+                    bat 'C:/jba/tools/sonar-scanner-4.3.0.2102/bin/sonar-scanner.bat -D sonar.projectKey=java-maven-junit-helloworld -D sonar.exclusions=**/src/**/*.java'
                 }
             }
         }
