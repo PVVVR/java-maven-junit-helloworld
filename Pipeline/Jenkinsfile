@@ -5,6 +5,12 @@ pipeline {
         jdk 'jdk'
     }
     stages {
+
+        stage('Prepare SCM') {
+            steps {
+                git branch: 'master', url: 'https://github.com/praveenkumar1290/sonar-coverage-example-java.git'
+            }
+        }
         stage ('Build') {
             steps {
                 bat 'mvn -Dmaven.test.failure.ignore=true install' 
