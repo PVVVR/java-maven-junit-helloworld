@@ -11,6 +11,11 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/praveenkumar1290/sonar-coverage-example-java.git'
             }
         }
+        stage('test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
         stage ('Build') {
             steps {
                 bat 'mvn -Dmaven.test.failure.ignore=true install' 
