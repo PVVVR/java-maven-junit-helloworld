@@ -6,20 +6,9 @@ pipeline {
     }
     stages {
 
-        stage('mvn install') {
-            steps {
-                bat 'mvn clean install'
-            }
-        }
-        stage('test') {
-            steps {
-                bat 'mvn test'
-            }
-        }
         stage ('Build') {
             steps {
-                bat 'mvn build'
-                /*bat 'mvn -Dmaven.test.failure.ignore=true install' */
+                bat 'mvn -Dmaven.test.failure.ignore=true install'
             }
             post {
                 success {
