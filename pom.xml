@@ -16,8 +16,6 @@
 
     <!-- This configures the compiler to produce Java 8 class files. -->
     <!-- The minimum JDK version installed is 8 of course, but newer JDK releases should work too. -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
     <hamcrest.version>2.2</hamcrest.version>
     <mockito.version>4.11.0</mockito.version>
     <jacoco.plugin.version>0.8.8</jacoco.plugin.version>
