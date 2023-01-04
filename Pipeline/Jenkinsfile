@@ -6,9 +6,9 @@ pipeline {
     }
     stages {
 
-        stage('Prepare SCM') {
+        stage('mvn install') {
             steps {
-                git branch: 'main', url: 'https://github.com/PVVVR/java-maven-junit-helloworld.git'
+                bat 'mvn clean install'
             }
         }
         stage('test') {
@@ -18,7 +18,8 @@ pipeline {
         }
         stage ('Build') {
             steps {
-                bat 'mvn -Dmaven.test.failure.ignore=true install' 
+                bat 'mvn build'
+                /*bat 'mvn -Dmaven.test.failure.ignore=true install' */
             }
             post {
                 success {
